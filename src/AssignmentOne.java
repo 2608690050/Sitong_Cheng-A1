@@ -30,22 +30,22 @@ public class AssignmentOne {
         System.out.println("------------------------------");
     
 
-    //Part 5- Appointment Collection
+    // Part 5 – Collection of appointments
         
         //Declare an ArrayList that can store instances of the Appointment class
         ArrayList<Appointment> appointments = new ArrayList<>();
         
         //Create an appointment and add it to the collection
-        createAppointment(appointments, "张三", "13800000001", "8:00", gp1);
-        createAppointment(appointments, "李四", "13800000002", "12:00", gp2);
-        createAppointment(appointments, "12", "13800000003", "9:00", dietitian1);
-        createAppointment(appointments, "23", "13800000004", "14:00", dietitian2);
+        createAppointment(appointments, "Miller", "13900000001", "8:00", gp1);
+        createAppointment(appointments, "Williams", "12800000002", "12:00", gp2);
+        createAppointment(appointments, "Garcia", "14500000003", "9:00", dietitian1);
+        createAppointment(appointments, "Johnson", "17600000004", "14:00", dietitian2);
 
         //Print existing appointments
         printExistingAppointments(appointments);
         
         //Cancel one of the appointments
-        cancelBooking(appointments, "13800000002");
+        cancelBooking(appointments, "12800000002");
         
         //Print the existing appointment again and display the updated appointment collection
         printExistingAppointments(appointments);
@@ -59,21 +59,21 @@ public class AssignmentOne {
     public static void createAppointment(ArrayList<Appointment> appointments, String patientName, String patientPhone, String preferredTimeSlot, HealthProfessional selectedDoctor) {
         //Check if the necessary information exists
         if (patientName.isEmpty() || patientPhone.isEmpty() || preferredTimeSlot.isEmpty() || selectedDoctor == null) {
-            System.out.println("无法创建约会，所有信息都是必需的！");
+            System.out.println("Missing required information, unable to create appointment!");
             return;
         }
         
         //Create a new date and add it to the collection
         Appointment newAppointment = new Appointment(patientName, patientPhone, preferredTimeSlot, selectedDoctor);
         appointments.add(newAppointment);
-        System.out.println("成功创建约会: " + patientName + " - " + preferredTimeSlot + "\n");
+        System.out.println("Successfully created appointment: " + patientName + " - " + preferredTimeSlot + "\n");
         
     }
     
     //Print all existing appointments
     public static void printExistingAppointments(ArrayList<Appointment> appointments) {
         if (appointments.isEmpty()) {
-            System.out.println("没有现有的约会！");
+            System.out.println("There are no existing appointments!");
         } else {
             for (Appointment appointment : appointments) {
                 appointment.printAppointmentDetails();
@@ -96,10 +96,10 @@ public class AssignmentOne {
         
         if (toCancel != null) {
             appointments.remove(toCancel);
-            System.out.println("成功取消预约：手机号 " + patientPhone);
+            System.out.println("Successfully cancelled appointment：phone number " + patientPhone);
             System.out.println("\n");
         } else {
-            System.out.println("未找到匹配的预约，无法取消！");
+            System.out.println("The appointment could not be found and cannot be cancelled!");
         }
     }
 }
