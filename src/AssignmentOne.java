@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class AssignmentOne {
     public static void main(String[] args) {
-        // Part 3 – Using classes and objects
+    // Part 3 – Using classes and objects
         // 创建全科医生对象
         GeneralPractitioner gp1 = new GeneralPractitioner(101, "Dr. Brown", 10,"Physician qualifications", "Family Medicine");
         GeneralPractitioner gp2 = new GeneralPractitioner(102, "Dr. Smith", 5, "Physician qualifications", "Pediatrics");
@@ -66,7 +66,8 @@ public class AssignmentOne {
         // 创建新的约会对象并添加到集合
         Appointment newAppointment = new Appointment(patientName, patientPhone, preferredTimeSlot, selectedDoctor);
         appointments.add(newAppointment);
-        System.out.println("成功创建约会: " + patientName + " - " + preferredTimeSlot);
+        System.out.println("成功创建约会: " + patientName + " - " + preferredTimeSlot + "\n");
+        
     }
     
     // 打印所有现有预约
