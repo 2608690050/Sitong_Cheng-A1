@@ -25,4 +25,28 @@ public class HealthProfessional {
         System.out.println("YearsOfExperience: " + yearsOfExperience);
     }
     
+    //方法:Getter和Setter
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+    
+    public void setYearsOfExperience(int yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
 }
