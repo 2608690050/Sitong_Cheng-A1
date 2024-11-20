@@ -2,19 +2,19 @@ import java.util.ArrayList;
 public class AssignmentOne {
     public static void main(String[] args) {
     // Part 3 – Using classes and objects
-        // 创建全科医生对象
+        //Create a general practitioner object
         GeneralPractitioner gp1 = new GeneralPractitioner(101, "Dr. Brown", 10,"Physician qualifications", "Family Medicine");
         GeneralPractitioner gp2 = new GeneralPractitioner(102, "Dr. Smith", 5, "Physician qualifications", "Pediatrics");
         GeneralPractitioner gp3 = new GeneralPractitioner(103,"Dr. Davis", 8, "Physician qualifications", "Internal Medicine");
         
-        // 创建营养师对象
+        //Create a dietitian object
         Dietitian dietitian1 = new Dietitian(301, "Dr. Jones", 3, "Bachelor of Dietetics", "Food Safety");
         Dietitian dietitian2 = new Dietitian(302, "Dr. Lee", 15, "Registered Dietitian", "Physiology and pharmacology");
 
-        // 打印所有卫生专业人员的详细信息
+        //Print detailed information of all healthcare professionals
         System.out.println("----- All Healthcare Professionals -----");
         
-        // 打印全科医生信息
+        //Print general practitioner information
         gp1.printDetails();
         System.out.println("\n");
         gp2.printDetails();
@@ -22,7 +22,7 @@ public class AssignmentOne {
         gp3.printDetails();
         System.out.println("\n");
         
-        // 打印营养师信息
+        //Print dietitian information
         dietitian1.printDetails();
         System.out.println("\n");
         dietitian2.printDetails();
@@ -30,47 +30,47 @@ public class AssignmentOne {
         System.out.println("------------------------------");
     
 
-    // 第5部分 - 预约集合
+    //Part 5- Appointment Collection
         
-        // 声明一个可以存储 Appointment 类实例的 ArrayList
+        //Declare an ArrayList that can store instances of the Appointment class
         ArrayList<Appointment> appointments = new ArrayList<>();
         
-        // 创建约会并添加到集合
+        //Create an appointment and add it to the collection
         createAppointment(appointments, "张三", "13800000001", "8:00", gp1);
         createAppointment(appointments, "李四", "13800000002", "12:00", gp2);
         createAppointment(appointments, "12", "13800000003", "9:00", dietitian1);
         createAppointment(appointments, "23", "13800000004", "14:00", dietitian2);
 
-        // 打印现有预约
+        //Print existing appointments
         printExistingAppointments(appointments);
         
-        // 取消其中一个预约
+        //Cancel one of the appointments
         cancelBooking(appointments, "13800000002");
         
-        // 再次打印现有预约，显示更新后的约会集合
+        //Print the existing appointment again and display the updated appointment collection
         printExistingAppointments(appointments);
         
-        // 打印分隔线
+        //Print Separation Lines
         System.out.println("------------------------------------");
     
     }
 
-    // 创建约会并将其添加到 ArrayList 中
+    //Create an appointment and add it to an ArrayList
     public static void createAppointment(ArrayList<Appointment> appointments, String patientName, String patientPhone, String preferredTimeSlot, HealthProfessional selectedDoctor) {
-        // 检查必需的信息是否存在
+        //Check if the necessary information exists
         if (patientName.isEmpty() || patientPhone.isEmpty() || preferredTimeSlot.isEmpty() || selectedDoctor == null) {
             System.out.println("无法创建约会，所有信息都是必需的！");
             return;
         }
         
-        // 创建新的约会对象并添加到集合
+        //Create a new date and add it to the collection
         Appointment newAppointment = new Appointment(patientName, patientPhone, preferredTimeSlot, selectedDoctor);
         appointments.add(newAppointment);
         System.out.println("成功创建约会: " + patientName + " - " + preferredTimeSlot + "\n");
         
     }
     
-    // 打印所有现有预约
+    //Print all existing appointments
     public static void printExistingAppointments(ArrayList<Appointment> appointments) {
         if (appointments.isEmpty()) {
             System.out.println("没有现有的约会！");
@@ -82,11 +82,11 @@ public class AssignmentOne {
         }
     }
     
-    // 使用患者的手机号码取消预约
+    //Cancel the appointment using the patient's mobile phone number
     public static void cancelBooking(ArrayList<Appointment> appointments, String patientPhone) {
         Appointment toCancel = null;
         
-        // 找到匹配的预约并取消
+        //Find a matching appointment and cancel it
         for (Appointment appointment : appointments) {
             if (appointment.getpatientPhone().equals(patientPhone)) {
                 toCancel = appointment;
