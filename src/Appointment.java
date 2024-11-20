@@ -1,7 +1,7 @@
 public class Appointment {
     // 患者的详细信息
     private String patientName;
-    private int patientPhone;
+    private String patientPhone;
     
     // 患者首选的时间段
     private String preferredTimeSlot;
@@ -12,13 +12,13 @@ public class Appointment {
     // 默认构造函数
     public Appointment() {
         this.patientName = "";
-        this.patientPhone = 0;
+        this.patientPhone = "";
         this.preferredTimeSlot = "";
         this.selectedDoctor = null;
     }
 
     // 带参构造函数，用于初始化所有实例变量
-    public Appointment(String patientName, int patientPhone, String preferredTimeSlot, HealthProfessional selectedDoctor) {
+    public Appointment(String patientName, String patientPhone, String preferredTimeSlot, HealthProfessional selectedDoctor) {
         this.patientName = patientName;
         this.patientPhone = patientPhone;
         this.preferredTimeSlot = preferredTimeSlot;
@@ -47,11 +47,11 @@ public class Appointment {
         this.patientName = patientName;
     }
 
-    public int getpatientPhone() {
+    public String getpatientPhone() {
         return patientPhone;
     }
 
-    public void setSpecialization(int patientPhone) {
+    public void setpatientPhone(String patientPhone) {
         this.patientPhone = patientPhone;
     }
 
