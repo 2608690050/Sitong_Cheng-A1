@@ -15,15 +15,17 @@ public class AssignmentOne {
         
         // 打印全科医生信息
         gp1.printDetails();
-        System.out.println("------------------------------------");
+        System.out.println("\n");
         gp2.printDetails();
-        System.out.println("------------------------------------");
+        System.out.println("\n");
         gp3.printDetails();
-        System.out.println("------------------------------------");
+        System.out.println("\n");
         
         // 打印营养师信息
         dietitian1.printDetails();
-        System.out.println("------------------------------------");
+        System.out.println("\n");
         dietitian2.printDetails();
+        System.out.println("");
+        System.out.println("------------------------------");
     }
 }
