@@ -1,15 +1,15 @@
 public class Appointment {
-    // 患者的详细信息
+    //Patient's detailed information
     private String patientName;
     private String patientPhone;
     
-    // 患者首选的时间段
+    //Patient's preferred time period
     private String preferredTimeSlot;
     
-    // 选定的医生（全科医生或营养师）
+    //Selected doctor (general practitioner or nutritionist)
     private HealthProfessional selectedDoctor;
 
-    // 默认构造函数
+    //Default constructor
     public Appointment() {
         this.patientName = "";
         this.patientPhone = "";
@@ -17,7 +17,7 @@ public class Appointment {
         this.selectedDoctor = null;
     }
 
-    // 带参构造函数，用于初始化所有实例变量
+    //Constructor with parameters, used to initialize all instance variables
     public Appointment(String patientName, String patientPhone, String preferredTimeSlot, HealthProfessional selectedDoctor) {
         this.patientName = patientName;
         this.patientPhone = patientPhone;
@@ -25,7 +25,7 @@ public class Appointment {
         this.selectedDoctor = selectedDoctor;
     }
 
-    // 打印所有实例变量的方法
+    //Method for printing all instance variables
     public void printAppointmentDetails() {
         System.out.println("Appointment Details:");
         System.out.println("Patient Name: " + patientName);
@@ -38,7 +38,7 @@ public class Appointment {
         }
     }
 
-    //方法：Getter 和 Setter
+    //Method: Getter and Setter
     public String getpatientName() {
         return patientName;
     }
