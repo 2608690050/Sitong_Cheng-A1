@@ -2,31 +2,31 @@ public class Dietitian extends HealthProfessional {
     private String qualification;
     private String specialization;
 
-    // 默认构造函数
+    //Default constructor
     public Dietitian() {
-        super(); // 调用基类的默认构造函数
+        super(); //Call the default constructor of the base class
         this.qualification = "";
         this.specialization = "";
     }
 
-    // 带参数的构造函数，初始化所有实例变量
+    //Constructor with parameters, initialize all instance variables
     public Dietitian(int id, String name, int yearsOfExperience, String qualification, String specialization) {
-        super(id, name, yearsOfExperience); // 调用基类的带参数构造函数
+        super(id, name, yearsOfExperience); //Call the parameterized constructor of the base class
         this.qualification = qualification;
         this.specialization = specialization;
     }
 
-    // 打印营养师的详细信息
+    //Print detailed information of dietitian
     @Override
     public void printDetails() {
         System.out.println("The health professional details are: ");
-        super.printDetails(); // 打印基类的详细信息
+        super.printDetails(); //Print detailed information of base classes
         System.out.println("Qualification: " + this.qualification);
         System.out.println("Specialization: " + this.specialization);
-        System.out.println("专业类型: 营养师");
+        System.out.println("Professional type: Dietitian");
     }
 
-    //方法：Getter 和 Setter
+    //Method: Getter and Setter
     public String getQualification() {
         return qualification;
     }
